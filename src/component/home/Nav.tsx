@@ -21,7 +21,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-export default function WithSubnavigation() {
+function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -85,10 +85,10 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"teal.400"}
             href={"#"}
             _hover={{
-              bg: "pink.300",
+              bg: "teal.300",
             }}
           >
             Sign Up
@@ -292,3 +292,5 @@ const NAV_ITEMS: Array<NavItem> = [
     href: "#",
   },
 ];
+
+export { WithSubnavigation };

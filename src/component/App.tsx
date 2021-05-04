@@ -6,13 +6,14 @@ import { Result } from "./exam/Result";
 import { Signin } from "./sign/Signin";
 import { Wordbook } from "./wordbook/Wordbook";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
-import WithSubnavigation from "./home/Nav";
+import { WithSubnavigation } from "./home/Nav";
 
 const breakpoints = {
-  sm: "360px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1440px",
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
 };
 
 const newTheme = extendTheme({ breakpoints });
