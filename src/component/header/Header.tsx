@@ -21,11 +21,11 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-function WithSubnavigation() {
+function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box as="header" position={"fixed"} width={"100%"}>
       <Flex
         bg={"white"}
         color={"gray.600"}
@@ -78,7 +78,7 @@ function WithSubnavigation() {
             variant={"link"}
             href={"#"}
           >
-            Sign In
+            ログイン
           </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
@@ -91,7 +91,7 @@ function WithSubnavigation() {
               bg: "teal.300",
             }}
           >
-            Sign Up
+            新規登録
           </Button>
         </Stack>
       </Flex>
@@ -187,7 +187,14 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={"white"} p={4} display={{ md: "none" }}>
+    <Stack
+      bg={"white"}
+      p={4}
+      display={{ md: "none" }}
+      borderBottom={1}
+      borderStyle={"solid"}
+      borderColor={"gray.200"}
+    >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -254,43 +261,39 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "｜ユーザー",
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
+    label: "｜テスト",
+    // children: [
+    //   {
+    //     label: "Job Board",
+    //     subLabel: "Find your dream design job",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "Freelance Projects",
+    //     subLabel: "An exclusive list for contract work",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
+    label: "｜単語帳",
     href: "#",
   },
 ];
 
-export { WithSubnavigation };
+export { Header };

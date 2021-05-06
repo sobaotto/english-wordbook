@@ -1,12 +1,12 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import "../css/App.css";
-import { Exam } from "./exam/Exam";
-import { Home } from "./home/Home";
-import { Result } from "./exam/Result";
-import { Signin } from "./sign/Signin";
-import { Wordbook } from "./wordbook/Wordbook";
+import { Exam } from "./body/exam/Exam";
+import { Home } from "./body/home/Home";
+import { Result } from "./body/exam/Result";
+import { Signin } from "./body/home/sign/Signin";
+import { Wordbook } from "./body/wordbook/Wordbook";
+import { Footer } from "./footer/Footer";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
-import { WithSubnavigation } from "./home/Nav";
+import { Header } from "./header/Header";
 
 const breakpoints = {
   sm: "30em",
@@ -22,7 +22,7 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <ChakraProvider theme={newTheme}>
-        <Route path="/" component={WithSubnavigation} />
+        <Route path="/" component={Header} />
 
         <Route exact path="/">
           <Home />
@@ -43,6 +43,7 @@ function App(): JSX.Element {
         <Route exact path="/wordbook">
           <Wordbook />
         </Route>
+        <Route path="/" component={Footer} />
       </ChakraProvider>
     </BrowserRouter>
   );
