@@ -1,19 +1,24 @@
-import {
-  Progress,
-  CircularProgress,
-  CircularProgressLabel,
-} from "@chakra-ui/react";
-import { ChoicesView } from "./ChoicesView";
+import { Flex, Box } from "@chakra-ui/react";
+import { Choices } from "./Choices";
+import { HeaderBlank } from "../../blankbox/HeaderBlank";
+import { FooterBlank } from "../../blankbox/FooterBlank";
+import { ProgressBar } from "./ProgressBar";
+import { PhotosOfWord } from "./PhotosOfWord";
 
 export const Exam = (): JSX.Element => {
   return (
-    <>
-      <Progress value={80} colorScheme="gray" />
-      <CircularProgress value={40} color="green.400">
-        <CircularProgressLabel>40%</CircularProgressLabel>
-      </CircularProgress>
-      <p>exam</p>
-      <ChoicesView />
-    </>
+    <Flex flexDirection="column" margin="0 auto">
+      <HeaderBlank />
+      <Flex
+        flexDirection="column"
+        width={{ base: "100%", md: "80%" }}
+        margin="0 auto"
+      >
+        <ProgressBar />
+        <PhotosOfWord />
+        <Choices />
+      </Flex>
+      <FooterBlank />
+    </Flex>
   );
 };
