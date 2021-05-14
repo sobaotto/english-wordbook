@@ -1,4 +1,4 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Choices } from "./Choices";
 import { HeaderBlank } from "../../blankbox/HeaderBlank";
 import { FooterBlank } from "../../blankbox/FooterBlank";

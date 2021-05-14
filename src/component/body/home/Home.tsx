@@ -1,12 +1,4 @@
-import {
-  Box,
-  Image,
-  Flex,
-  Text,
-  Stack,
-  Center,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Image, Flex, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export const Home = (): JSX.Element => {
